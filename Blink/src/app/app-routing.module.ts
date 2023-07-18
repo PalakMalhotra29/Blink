@@ -7,7 +7,7 @@ import { AboutComponent } from './patient/about/about.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'patient/home',pathMatch:'full'},
+  {path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'signin',component:SignInComponent},
   {path:'patient', component:LayoutComponent,children:[

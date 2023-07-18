@@ -1,10 +1,11 @@
 <!-- <p>login works!</p> -->
 
- <!-- Contact Start -->
+ <!-- Login Start -->
  <div class="container-xxl py-5">
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-4">
+                <img src="../../assets/img/login.png" alt="Login">
                 <!-- <div class="h-100 bg-light rounded d-flex align-items-center p-5">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
                         <i class="fa fa-map-marker-alt text-primary"></i>
@@ -15,7 +16,7 @@
                     </div>
                 </div> -->
             </div>
-            <div class="col-lg-4">
+            <!-- <div class="col-lg-4"> -->
                 <!-- <div class="h-75 w-20 bg-light rounded d-flex align-items-center p-5 ms-5"> -->
                     <!-- <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;"> -->
                         
@@ -25,11 +26,11 @@
                         <!-- <h2>Sign In</h2> -->
                         <!-- <p class="mb-2"></p> -->
                         <!-- <h5 class="mb-0">+012 345 6789</h5> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <!-- <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div>s -->
+            <!-- <div class="col-lg-4">
+                <div class="h-100 bg-light rounded d-flex align-items-center p-5">
                     <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
                         <i class="fa fa-envelope-open text-primary"></i>
                     </div>
@@ -37,17 +38,17 @@
                         <p class="mb-2">Mail Us Now</p>
                         <h5 class="mb-0">info@example.com</h5>
                     </div>
-                </div> -->
-            </div>
-            <div class="col-lg-12 wow fadeIn" data-wow-delay="0.1s">
+                </div>
+            </div> -->
+            <div class="col-lg-8 wow fadeIn ms-auto me-auto" data-wow-delay="0.1s">
                 <div class="bg-light rounded p-5">
                     <h3 class="col-lg-4"></h3>
-                    <h3 class="text-centre col-lg-4x">Login</h3>
+                    <h3 class="text-centre col-lg-12 text-primary">Login</h3>
                     <h3 class="col-lg-4"></h3>
-                    <p class="d-inline-block border rounded-pill py-1 px-4">Login</p>
+                    <!-- <p class="d-inline-block border rounded-pill py-1 px-4">Login</p> -->
                     <!-- <h1 class="mb-4">Have Any Query? Please Contact Us!</h1> -->
                     <!-- <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p> -->
-                    <form [formGroup]="login" (ngSubmit)="submit">
+                    <form [formGroup]="login" (ngSubmit)="submit()">
                         <div class="row g-3">
                             <!-- <div class="col-md-6">
                                 <div class="form-floating">
@@ -82,6 +83,7 @@
                                     <input type="email" class="form-control" id="email" placeholder="Your Email" formControlName="email">
                                     <label for="email">Your Email</label>
                                 </div>
+                                <p class="text-danger" *ngIf="login.controls['email'].invalid && (login.controls['email'].touched || login.controls['email'].dirty)">Please enter a valid email.</p>
                             </div>
                             
                             <div class="col-12">
@@ -89,12 +91,13 @@
                                     <input type="text" class="form-control mb-3" id="password" placeholder="password" formControlName="password">
                                     <label for="password">Password</label>
                                 </div>
+                                <p class="text-danger" *ngIf="login.controls['password'].invalid && (login.controls['password'].touched || login.controls['password'].dirty)">Please enter the correct password.</p>
                             </div>
                             
                             </div>
                             
                             <div class="col-4">
-                                <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="login.invalid">Login</button>
+                                <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="login.invalid" value="login">Login</button>
                             </div>
                         
                         <!-- </div> -->
@@ -112,5 +115,5 @@
         </div>
     <!-- </div> -->
 <!-- </div> -->
-<!-- Contact End -->
+<!-- Login End -->
 
